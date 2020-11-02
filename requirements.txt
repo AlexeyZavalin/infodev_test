@@ -1,0 +1,5 @@
+django==3.1.3
+djangorestframework==3.12.1
+markdown
+django-filter
+gunicorn==19.9.0
