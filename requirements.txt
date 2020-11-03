@@ -3,3 +3,4 @@ djangorestframework==3.12.1
 markdown
 django-filter
 gunicorn==19.9.0
+django-cors-headers==3.5.0
