@@ -3,6 +3,14 @@ from mainapp.models import WarningDevice
 from mainapp.serializers import WarningDeviceSerializer
 import django_filters.rest_framework
 from rest_framework import filters
+from django.views.generic import ListView
+
+
+class MainView(ListView):
+    model = WarningDevice
+    context_object_name = 'devices'
+    template_name = 'mainapp/main.html'
+    paginate_by = 2
 
 
 class WarningDeviceViewSet(viewsets.ModelViewSet):

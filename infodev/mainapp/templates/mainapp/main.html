@@ -1,0 +1,43 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>InfoDev Test</title>
+    <script src="{% static 'js/main.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+<form id="filter">
+    {% csrf_token %}
+    <button>Фильтр</button>
+</form>
+<div class="devices">
+    {% for device in devices %}
+    <div class="devices__item device">
+        <div class="device__name">
+            Название: {{ device.name }}
+        </div>
+        <div class="device__type">
+            Тип: {{ device.device_type }}
+        </div>
+        <div class="device__location">
+            Адрес: {{ device.location_address }}
+        </div>
+        <div class="device__latitude">
+            Широта: {{ device.latitude }}
+        </div>
+        <div class="device__longitude">
+            Долгота: {{ device.longitude }}
+        </div>
+        <div class="device__radius">
+            Радиус покрытия: {{ device.zone_radius }}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+</body>
+</html>
