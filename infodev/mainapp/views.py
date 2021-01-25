@@ -22,11 +22,12 @@ class WarningDeviceViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         queryset = WarningDevice.objects.all()
         params = self.request.query_params
-        if 'zone_radius_min' in params:
+        if 'zone_radius_min' in params and params['zone_radius_min'] != '':
             queryset = queryset.filter(zone_radius__gte=params.get('zone_radius_min'))
-        if 'zone_radius_max' in params:
+        if 'zone_radius_max' in params and params['zone_radius_max'] != '':
             queryset = queryset.filter(zone_radius__lte=params.get('zone_radius_max'))
-        if 'left_top' in params and 'right_bottom' in params:
+        if 'left_top' in params and 'right_bottom' in params\
+                and params['left_top'] != '' and params['right_bottom'] != '':
             left_top_coords = params.get('left_top').split(',')
             right_bottom_coords = params.get('right_bottom').split(',')
             queryset = queryset.filter(
