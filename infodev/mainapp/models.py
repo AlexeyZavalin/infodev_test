@@ -1,8 +1,8 @@
 from django.db import models
 
 DEVICE_TYPE_CHOICES = [
-    ('SR', 'Siren'),
-    ('SP', 'Speaker'),
+    ('SR', 'Сирена'),
+    ('SP', 'Громкоговоритель'),
 ]
 
 
