@@ -4,3 +4,4 @@ markdown
 django-filter
 gunicorn==19.9.0
 django-cors-headers==3.5.0
+flake8==3.8.4

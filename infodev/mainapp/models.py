@@ -15,5 +15,8 @@ class WarningDevice(models.Model):
     longitude = models.DecimalField(decimal_places=6, max_digits=9, null=False, verbose_name='Долгота')
     zone_radius = models.IntegerField(null=False, verbose_name='Радиус зоны звукопокрытия')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name_plural = "Устройства оповещения"

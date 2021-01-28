@@ -1,7 +1,7 @@
 let form = document.getElementById('filter');
 let devicesContainer = document.querySelector('.devices');
 let paginationContainer = document.querySelector('.pagination');
-
+const token = 'e9c70d6bbedfcdfda63befa4029134c1e35175e9';
 let render_data = (items) => {
     devicesContainer.innerHTML = '';
     if (items.length > 0) {
@@ -50,9 +50,8 @@ let clickPagination = (event) => {
     event.preventDefault();
     let href = event.target.href;
     axios.get(href, {
-        auth: {
-            username: 'admin',
-            password: 'test4321'
+        headers: {
+            Authorization: `Bearer ${token}`
         }
     })
         .then(function (response) {
@@ -69,10 +68,9 @@ let clickPagination = (event) => {
 }
 
 axios.get('/api/devices/', {
-    auth: {
-        username: 'admin',
-        password: 'test4321'
-    }
+    headers: {
+            Authorization: `Bearer ${token}`
+        }
 })
     .then(function (response) {
         let next = response.data.next;
@@ -92,9 +90,8 @@ let submitForm = (event) => {
         params[pair[0]] = pair[1];
     }
     axios.get('/api/devices', {
-        auth: {
-            username: 'admin',
-            password: 'test4321'
+        headers: {
+            Authorization: `Bearer ${token}`
         },
         params: params
     })

@@ -8,3 +8,7 @@ class FilterForm(forms.Form):
     right_bottom = forms.CharField(label='Координаты правого нижнего угла', max_length=50, required=False)
     zone_radius_min = forms.IntegerField(label='Минимальный радиус зоны звукопокрытия', required=False)
     zone_radius_max = forms.IntegerField(label='Максимальный радиус зоны звукопокрытия', required=False)
+
+
+class SearchForm(forms.Form):
+    name_address = forms.CharField
