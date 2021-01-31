@@ -1,4 +1,5 @@
 let form = document.getElementById('filter');
+let searchForm = document.getElementById('search');
 let devicesContainer = document.querySelector('.devices');
 let paginationContainer = document.querySelector('.pagination');
 const token = 'e9c70d6bbedfcdfda63befa4029134c1e35175e9';
@@ -112,3 +113,4 @@ let submitForm = (event) => {
 }
 
 form.addEventListener('submit', submitForm);
+searchForm.addEventListener('submit', submitForm);

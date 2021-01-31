@@ -4,7 +4,7 @@ from mainapp.serializers import WarningDeviceSerializer
 import django_filters.rest_framework
 from rest_framework import filters
 from django.views.generic import ListView
-from mainapp.forms import FilterForm
+from mainapp.forms import FilterForm, SearchForm
 
 
 class MainView(ListView):
@@ -15,6 +15,8 @@ class MainView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        form = FilterForm
-        context['filter_form'] = form
+        filter_form = FilterForm
+        search_form = SearchForm
+        context['filter_form'] = filter_form
+        context['search_form'] = search_form
         return context

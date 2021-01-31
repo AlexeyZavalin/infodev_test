@@ -11,4 +11,4 @@ class FilterForm(forms.Form):
 
 
 class SearchForm(forms.Form):
-    name_address = forms.CharField
+    search = forms.CharField(label='Поиск')

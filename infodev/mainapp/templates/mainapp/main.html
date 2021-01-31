@@ -16,6 +16,11 @@
         {{ filter_form }}
         <button type="submit">Фильтр</button>
     </form>
+    <form id="search">
+        {% csrf_token %}
+        {{ search_form }}
+        <button type="submit">Поиск</button>
+    </form>
     <div class="devices">
         {% for device in devices %}
         <div class="devices__item device">
