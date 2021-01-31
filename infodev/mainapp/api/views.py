@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from mainapp.models import WarningDevice
-from mainapp.serializers import WarningDeviceSerializer
+from mainapp.api.serializers import WarningDeviceSerializer
 from rest_framework import filters
 import django_filters
 

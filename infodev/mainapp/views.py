@@ -1,8 +1,4 @@
-from rest_framework import viewsets
 from mainapp.models import WarningDevice
-from mainapp.serializers import WarningDeviceSerializer
-import django_filters.rest_framework
-from rest_framework import filters
 from django.views.generic import ListView
 from mainapp.forms import FilterForm, SearchForm
 
