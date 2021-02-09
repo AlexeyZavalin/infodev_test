@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from mainapp.models import WarningDevice
+from mainapp.models import WarningDevice, DEVICE_TYPE_CHOICES
 
 
 class ChoiceField(serializers.ChoiceField):
@@ -21,7 +21,7 @@ class ChoiceField(serializers.ChoiceField):
 
 
 class WarningDeviceSerializer(serializers.ModelSerializer):
-    device_type = serializers.CharField(source='get_device_type_display')
+    device_type = ChoiceField(choices=DEVICE_TYPE_CHOICES)
 
     class Meta:
         model = WarningDevice
